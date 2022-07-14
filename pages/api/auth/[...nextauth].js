@@ -4,8 +4,6 @@ import { FirebaseAdapter } from "@next-auth/firebase-adapter";
 
 // import { getApp, getApps, initializeApp } from "firebase/app";
 
-import { app, db } from "../../../firebase";
-
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
@@ -18,7 +16,7 @@ export default NextAuth({
   ],
   callbacks: {
     async session({ session, token }) {
-      session.user.tag = session.user.name
+      session.user.name = session.user.name
         .split(" ")
         .join("")
         .toLocaleLowerCase();

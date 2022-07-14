@@ -59,11 +59,13 @@ function Header() {
           Login
         </button>
       ) : (
-        <img
-          src={session?.user?.image}
-          className="ml-auto h-12 w-12 rounded-full object-cover cursor-pointer"
-          onClick={signOut}
-        />
+        <>
+          <img
+            src={session?.user?.image}
+            className="ml-auto h-12 w-12 rounded-full object-cover cursor-pointer"
+            onClick={signOut}
+          />
+        </>
       )}
     </header>
   );
